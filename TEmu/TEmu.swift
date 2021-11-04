@@ -49,7 +49,9 @@ struct TEmuView: View {
     @State var cyclesSeq: Int = 0
 
     let stdin = FileHandle.standardInput
-        
+      
+    let audioUnit = ToneOutputUnit()
+    
     let objPath = "/Users/teo/Downloads/"
     
     init() {
@@ -112,6 +114,22 @@ struct TEmuView: View {
                     bus.buffer[Int(a)] = [UInt8](chars)[0]
                 }
             }
+        }
+    }
+    
+    func audioComms(bus: Bus, a: UInt8, b: UInt8) {
+        if b == 0 {
+            if a == 0x2 {
+                print("audioComms 0x2 unimplemented")
+            }
+        } else if a == 0xf {
+            // play a sound
+            let length = bus.busRead16(a: 0xa)
+            audioUnit.setFrequency(freq: 500)
+            audioUnit.setToneVolume(vol: 8000)
+            audioUnit.enableSpeaker()
+            audioUnit.setToneTime(t: 1)
+
         }
     }
     
