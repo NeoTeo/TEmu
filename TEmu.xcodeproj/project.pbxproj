@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		ABF4B1FF2734175D00B0AE65 /* TEmuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4B1FE2734175D00B0AE65 /* TEmuApp.swift */; };
-		ABF4B2012734175D00B0AE65 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4B2002734175D00B0AE65 /* ContentView.swift */; };
 		ABF4B2032734175E00B0AE65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABF4B2022734175E00B0AE65 /* Assets.xcassets */; };
 		ABF4B2062734175E00B0AE65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABF4B2052734175E00B0AE65 /* Preview Assets.xcassets */; };
 		ABF4B2102734175F00B0AE65 /* TEmuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4B20F2734175F00B0AE65 /* TEmuTests.swift */; };
 		ABF4B21A2734175F00B0AE65 /* TEmuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4B2192734175F00B0AE65 /* TEmuUITests.swift */; };
 		ABF4B21C2734175F00B0AE65 /* TEmuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4B21B2734175F00B0AE65 /* TEmuUITestsLaunchTests.swift */; };
+		ABF4B2292734179500B0AE65 /* TEmu.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4B2282734179500B0AE65 /* TEmu.swift */; };
+		ABF4B22C2734180E00B0AE65 /* TEma in Frameworks */ = {isa = PBXBuildFile; productRef = ABF4B22B2734180E00B0AE65 /* TEma */; };
+		ABF4B22E2734183900B0AE65 /* MouseTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4B22D2734183900B0AE65 /* MouseTracking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,6 @@
 /* Begin PBXFileReference section */
 		ABF4B1FB2734175D00B0AE65 /* TEmu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TEmu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF4B1FE2734175D00B0AE65 /* TEmuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEmuApp.swift; sourceTree = "<group>"; };
-		ABF4B2002734175D00B0AE65 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ABF4B2022734175E00B0AE65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABF4B2052734175E00B0AE65 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ABF4B20B2734175F00B0AE65 /* TEmuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TEmuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +45,9 @@
 		ABF4B2152734175F00B0AE65 /* TEmuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TEmuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF4B2192734175F00B0AE65 /* TEmuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEmuUITests.swift; sourceTree = "<group>"; };
 		ABF4B21B2734175F00B0AE65 /* TEmuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEmuUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ABF4B2282734179500B0AE65 /* TEmu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEmu.swift; sourceTree = "<group>"; };
+		ABF4B22D2734183900B0AE65 /* MouseTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouseTracking.swift; sourceTree = "<group>"; };
+		ABF4B22F2734198A00B0AE65 /* TEmu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TEmu.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF4B22C2734180E00B0AE65 /* TEma in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +99,10 @@
 		ABF4B1FD2734175D00B0AE65 /* TEmu */ = {
 			isa = PBXGroup;
 			children = (
+				ABF4B22F2734198A00B0AE65 /* TEmu.entitlements */,
 				ABF4B1FE2734175D00B0AE65 /* TEmuApp.swift */,
-				ABF4B2002734175D00B0AE65 /* ContentView.swift */,
+				ABF4B2282734179500B0AE65 /* TEmu.swift */,
+				ABF4B22D2734183900B0AE65 /* MouseTracking.swift */,
 				ABF4B2022734175E00B0AE65 /* Assets.xcassets */,
 				ABF4B2042734175E00B0AE65 /* Preview Content */,
 			);
@@ -143,6 +150,9 @@
 			dependencies = (
 			);
 			name = TEmu;
+			packageProductDependencies = (
+				ABF4B22B2734180E00B0AE65 /* TEma */,
+			);
 			productName = TEmu;
 			productReference = ABF4B1FB2734175D00B0AE65 /* TEmu.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +225,9 @@
 				Base,
 			);
 			mainGroup = ABF4B1F22734175D00B0AE65;
+			packageReferences = (
+				ABF4B22A2734180E00B0AE65 /* XCRemoteSwiftPackageReference "TEma" */,
+			);
 			productRefGroup = ABF4B1FC2734175D00B0AE65 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,7 +270,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABF4B2012734175D00B0AE65 /* ContentView.swift in Sources */,
+				ABF4B2292734179500B0AE65 /* TEmu.swift in Sources */,
+				ABF4B22E2734183900B0AE65 /* MouseTracking.swift in Sources */,
 				ABF4B1FF2734175D00B0AE65 /* TEmuApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +429,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TEmu/TEmu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -430,7 +445,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.terminalglow.TEmu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -444,6 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TEmu/TEmu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -459,7 +475,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.terminalglow.TEmu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -604,6 +620,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ABF4B22A2734180E00B0AE65 /* XCRemoteSwiftPackageReference "TEma" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NeoTeo/TEma.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ABF4B22B2734180E00B0AE65 /* TEma */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABF4B22A2734180E00B0AE65 /* XCRemoteSwiftPackageReference "TEma" */;
+			productName = TEma;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ABF4B1F32734175D00B0AE65 /* Project object */;
 }
