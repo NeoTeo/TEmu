@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ABF4B1FF2734175D00B0AE65 /* TEmuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4B1FE2734175D00B0AE65 /* TEmuApp.swift */; };
+		ABF4B2012734175D00B0AE65 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4B2002734175D00B0AE65 /* ContentView.swift */; };
+		ABF4B2032734175E00B0AE65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABF4B2022734175E00B0AE65 /* Assets.xcassets */; };
+		ABF4B2062734175E00B0AE65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABF4B2052734175E00B0AE65 /* Preview Assets.xcassets */; };
+		ABF4B2102734175F00B0AE65 /* TEmuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4B20F2734175F00B0AE65 /* TEmuTests.swift */; };
+		ABF4B21A2734175F00B0AE65 /* TEmuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4B2192734175F00B0AE65 /* TEmuUITests.swift */; };
+		ABF4B21C2734175F00B0AE65 /* TEmuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4B21B2734175F00B0AE65 /* TEmuUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ABF4B20C2734175F00B0AE65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABF4B1F32734175D00B0AE65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABF4B1FA2734175D00B0AE65;
+			remoteInfo = TEmu;
+		};
+		ABF4B2162734175F00B0AE65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABF4B1F32734175D00B0AE65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABF4B1FA2734175D00B0AE65;
+			remoteInfo = TEmu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ABF4B1FB2734175D00B0AE65 /* TEmu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TEmu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABF4B1FE2734175D00B0AE65 /* TEmuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEmuApp.swift; sourceTree = "<group>"; };
+		ABF4B2002734175D00B0AE65 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		ABF4B2022734175E00B0AE65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ABF4B2052734175E00B0AE65 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ABF4B20B2734175F00B0AE65 /* TEmuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TEmuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABF4B20F2734175F00B0AE65 /* TEmuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEmuTests.swift; sourceTree = "<group>"; };
+		ABF4B2152734175F00B0AE65 /* TEmuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TEmuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABF4B2192734175F00B0AE65 /* TEmuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEmuUITests.swift; sourceTree = "<group>"; };
+		ABF4B21B2734175F00B0AE65 /* TEmuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEmuUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ABF4B1F82734175D00B0AE65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABF4B2082734175F00B0AE65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABF4B2122734175F00B0AE65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ABF4B1F22734175D00B0AE65 = {
+			isa = PBXGroup;
+			children = (
+				ABF4B1FD2734175D00B0AE65 /* TEmu */,
+				ABF4B20E2734175F00B0AE65 /* TEmuTests */,
+				ABF4B2182734175F00B0AE65 /* TEmuUITests */,
+				ABF4B1FC2734175D00B0AE65 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ABF4B1FC2734175D00B0AE65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ABF4B1FB2734175D00B0AE65 /* TEmu.app */,
+				ABF4B20B2734175F00B0AE65 /* TEmuTests.xctest */,
+				ABF4B2152734175F00B0AE65 /* TEmuUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ABF4B1FD2734175D00B0AE65 /* TEmu */ = {
+			isa = PBXGroup;
+			children = (
+				ABF4B1FE2734175D00B0AE65 /* TEmuApp.swift */,
+				ABF4B2002734175D00B0AE65 /* ContentView.swift */,
+				ABF4B2022734175E00B0AE65 /* Assets.xcassets */,
+				ABF4B2042734175E00B0AE65 /* Preview Content */,
+			);
+			path = TEmu;
+			sourceTree = "<group>";
+		};
+		ABF4B2042734175E00B0AE65 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				ABF4B2052734175E00B0AE65 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ABF4B20E2734175F00B0AE65 /* TEmuTests */ = {
+			isa = PBXGroup;
+			children = (
+				ABF4B20F2734175F00B0AE65 /* TEmuTests.swift */,
+			);
+			path = TEmuTests;
+			sourceTree = "<group>";
+		};
+		ABF4B2182734175F00B0AE65 /* TEmuUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ABF4B2192734175F00B0AE65 /* TEmuUITests.swift */,
+				ABF4B21B2734175F00B0AE65 /* TEmuUITestsLaunchTests.swift */,
+			);
+			path = TEmuUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ABF4B1FA2734175D00B0AE65 /* TEmu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABF4B21F2734175F00B0AE65 /* Build configuration list for PBXNativeTarget "TEmu" */;
+			buildPhases = (
+				ABF4B1F72734175D00B0AE65 /* Sources */,
+				ABF4B1F82734175D00B0AE65 /* Frameworks */,
+				ABF4B1F92734175D00B0AE65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TEmu;
+			productName = TEmu;
+			productReference = ABF4B1FB2734175D00B0AE65 /* TEmu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ABF4B20A2734175F00B0AE65 /* TEmuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABF4B2222734175F00B0AE65 /* Build configuration list for PBXNativeTarget "TEmuTests" */;
+			buildPhases = (
+				ABF4B2072734175F00B0AE65 /* Sources */,
+				ABF4B2082734175F00B0AE65 /* Frameworks */,
+				ABF4B2092734175F00B0AE65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABF4B20D2734175F00B0AE65 /* PBXTargetDependency */,
+			);
+			name = TEmuTests;
+			productName = TEmuTests;
+			productReference = ABF4B20B2734175F00B0AE65 /* TEmuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ABF4B2142734175F00B0AE65 /* TEmuUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABF4B2252734175F00B0AE65 /* Build configuration list for PBXNativeTarget "TEmuUITests" */;
+			buildPhases = (
+				ABF4B2112734175F00B0AE65 /* Sources */,
+				ABF4B2122734175F00B0AE65 /* Frameworks */,
+				ABF4B2132734175F00B0AE65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABF4B2172734175F00B0AE65 /* PBXTargetDependency */,
+			);
+			name = TEmuUITests;
+			productName = TEmuUITests;
+			productReference = ABF4B2152734175F00B0AE65 /* TEmuUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ABF4B1F32734175D00B0AE65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					ABF4B1FA2734175D00B0AE65 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					ABF4B20A2734175F00B0AE65 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = ABF4B1FA2734175D00B0AE65;
+					};
+					ABF4B2142734175F00B0AE65 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = ABF4B1FA2734175D00B0AE65;
+					};
+				};
+			};
+			buildConfigurationList = ABF4B1F62734175D00B0AE65 /* Build configuration list for PBXProject "TEmu" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ABF4B1F22734175D00B0AE65;
+			productRefGroup = ABF4B1FC2734175D00B0AE65 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ABF4B1FA2734175D00B0AE65 /* TEmu */,
+				ABF4B20A2734175F00B0AE65 /* TEmuTests */,
+				ABF4B2142734175F00B0AE65 /* TEmuUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ABF4B1F92734175D00B0AE65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABF4B2062734175E00B0AE65 /* Preview Assets.xcassets in Resources */,
+				ABF4B2032734175E00B0AE65 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABF4B2092734175F00B0AE65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABF4B2132734175F00B0AE65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ABF4B1F72734175D00B0AE65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABF4B2012734175D00B0AE65 /* ContentView.swift in Sources */,
+				ABF4B1FF2734175D00B0AE65 /* TEmuApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABF4B2072734175F00B0AE65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABF4B2102734175F00B0AE65 /* TEmuTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABF4B2112734175F00B0AE65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABF4B21A2734175F00B0AE65 /* TEmuUITests.swift in Sources */,
+				ABF4B21C2734175F00B0AE65 /* TEmuUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ABF4B20D2734175F00B0AE65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABF4B1FA2734175D00B0AE65 /* TEmu */;
+			targetProxy = ABF4B20C2734175F00B0AE65 /* PBXContainerItemProxy */;
+		};
+		ABF4B2172734175F00B0AE65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABF4B1FA2734175D00B0AE65 /* TEmu */;
+			targetProxy = ABF4B2162734175F00B0AE65 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		ABF4B21D2734175F00B0AE65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ABF4B21E2734175F00B0AE65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		ABF4B2202734175F00B0AE65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TEmu/Preview Content\"";
+				DEVELOPMENT_TEAM = SK8WX2BAWU;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.terminalglow.TEmu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ABF4B2212734175F00B0AE65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TEmu/Preview Content\"";
+				DEVELOPMENT_TEAM = SK8WX2BAWU;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.terminalglow.TEmu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		ABF4B2232734175F00B0AE65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SK8WX2BAWU;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.terminalglow.TEmuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TEmu.app/Contents/MacOS/TEmu";
+			};
+			name = Debug;
+		};
+		ABF4B2242734175F00B0AE65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SK8WX2BAWU;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.terminalglow.TEmuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TEmu.app/Contents/MacOS/TEmu";
+			};
+			name = Release;
+		};
+		ABF4B2262734175F00B0AE65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SK8WX2BAWU;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.terminalglow.TEmuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = TEmu;
+			};
+			name = Debug;
+		};
+		ABF4B2272734175F00B0AE65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SK8WX2BAWU;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.terminalglow.TEmuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = TEmu;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ABF4B1F62734175D00B0AE65 /* Build configuration list for PBXProject "TEmu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABF4B21D2734175F00B0AE65 /* Debug */,
+				ABF4B21E2734175F00B0AE65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABF4B21F2734175F00B0AE65 /* Build configuration list for PBXNativeTarget "TEmu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABF4B2202734175F00B0AE65 /* Debug */,
+				ABF4B2212734175F00B0AE65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABF4B2222734175F00B0AE65 /* Build configuration list for PBXNativeTarget "TEmuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABF4B2232734175F00B0AE65 /* Debug */,
+				ABF4B2242734175F00B0AE65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABF4B2252734175F00B0AE65 /* Build configuration list for PBXNativeTarget "TEmuUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABF4B2262734175F00B0AE65 /* Debug */,
+				ABF4B2272734175F00B0AE65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ABF4B1F32734175D00B0AE65 /* Project object */;
+}
