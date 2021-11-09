@@ -378,7 +378,7 @@ class PPU: ObservableObject {
         guard imageDataProvider != nil else { fatalError("PPU init failed with nil imageDataProvider") }
         colorSpace = CGColorSpace(indexedBaseSpace: CGColorSpaceCreateDeviceRGB(),
                                   last: (clut.count/3)-1,
-                                  colorTable: UnsafePointer<UInt8>(clut))
+                                  colorTable: clut )
         guard colorSpace != nil else { fatalError("PPU init failed with nil colorSpace") }
         
     }
