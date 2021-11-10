@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB4E74FC273AAA0000C85BB6 /* AudioPlaybackUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E74FB273AAA0000C85BB6 /* AudioPlaybackUnit.swift */; };
 		ABF4B1FF2734175D00B0AE65 /* TEmuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4B1FE2734175D00B0AE65 /* TEmuApp.swift */; };
 		ABF4B2032734175E00B0AE65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABF4B2022734175E00B0AE65 /* Assets.xcassets */; };
 		ABF4B2062734175E00B0AE65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABF4B2052734175E00B0AE65 /* Preview Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB4E74FB273AAA0000C85BB6 /* AudioPlaybackUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlaybackUnit.swift; sourceTree = "<group>"; };
 		ABF4B1FB2734175D00B0AE65 /* TEmu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TEmu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF4B1FE2734175D00B0AE65 /* TEmuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEmuApp.swift; sourceTree = "<group>"; };
 		ABF4B2022734175E00B0AE65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				ABF4B23227341D7D00B0AE65 /* ToneOutputUnit.swift */,
 				ABF4B2022734175E00B0AE65 /* Assets.xcassets */,
 				ABF4B2042734175E00B0AE65 /* Preview Content */,
+				AB4E74FB273AAA0000C85BB6 /* AudioPlaybackUnit.swift */,
 			);
 			path = TEmu;
 			sourceTree = "<group>";
@@ -207,7 +210,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					ABF4B1FA2734175D00B0AE65 = {
 						CreatedOnToolsVersion = 13.0;
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB4E74FC273AAA0000C85BB6 /* AudioPlaybackUnit.swift in Sources */,
 				ABF4B2292734179500B0AE65 /* TEmu.swift in Sources */,
 				ABF4B22E2734183900B0AE65 /* MouseTracking.swift in Sources */,
 				ABF4B23327341D7D00B0AE65 /* ToneOutputUnit.swift in Sources */,
@@ -438,15 +442,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TEmu/TEmu.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TEmu/Preview Content\"";
 				DEVELOPMENT_TEAM = SK8WX2BAWU;
-				ENABLE_APP_SANDBOX = YES;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -468,15 +473,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TEmu/TEmu.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TEmu/Preview Content\"";
 				DEVELOPMENT_TEAM = SK8WX2BAWU;
-				ENABLE_APP_SANDBOX = YES;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (

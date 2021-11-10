@@ -124,7 +124,7 @@ struct TEmuView: View {
             }
         } else if a == 0xf {
             // play a sound
-            let length = bus.busRead16(a: 0xa)
+            //let length = bus.busRead16(a: 0xa)
             audioUnit.setFrequency(freq: 500)
             audioUnit.setToneVolume(vol: 8000)
             audioUnit.enableSpeaker()
@@ -250,7 +250,8 @@ struct TEmuView: View {
 //                            try? FileHandle.standardOutput.write(contentsOf: dat)
 //                            }
                             //tema.mmu.debugInit()
-                            tema.tests()
+//                            tema.tests()
+                            playPCM(filePath: "/Users/teo/Downloads/sine.pcm")
                         }
                     Text("cpu rate: \(cycleRate)").monospacedDigit()
                     Text("fps: \(fps)").monospacedDigit()
