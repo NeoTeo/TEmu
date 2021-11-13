@@ -17,7 +17,6 @@
 		ABF4B2292734179500B0AE65 /* TEmu.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4B2282734179500B0AE65 /* TEmu.swift */; };
 		ABF4B22C2734180E00B0AE65 /* TEma in Frameworks */ = {isa = PBXBuildFile; productRef = ABF4B22B2734180E00B0AE65 /* TEma */; };
 		ABF4B22E2734183900B0AE65 /* MouseTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4B22D2734183900B0AE65 /* MouseTracking.swift */; };
-		ABF4B23127341BE800B0AE65 /* Sources in Resources */ = {isa = PBXBuildFile; fileRef = ABF4B23027341BE800B0AE65 /* Sources */; };
 		ABF4B23327341D7D00B0AE65 /* ToneOutputUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4B23227341D7D00B0AE65 /* ToneOutputUnit.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +51,6 @@
 		ABF4B2282734179500B0AE65 /* TEmu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEmu.swift; sourceTree = "<group>"; };
 		ABF4B22D2734183900B0AE65 /* MouseTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouseTracking.swift; sourceTree = "<group>"; };
 		ABF4B22F2734198A00B0AE65 /* TEmu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TEmu.entitlements; sourceTree = "<group>"; };
-		ABF4B23027341BE800B0AE65 /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sources; path = ../TEma/Sources; sourceTree = "<group>"; };
 		ABF4B23227341D7D00B0AE65 /* ToneOutputUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToneOutputUnit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,7 +83,6 @@
 		ABF4B1F22734175D00B0AE65 = {
 			isa = PBXGroup;
 			children = (
-				ABF4B23027341BE800B0AE65 /* Sources */,
 				ABF4B1FD2734175D00B0AE65 /* TEmu */,
 				ABF4B20E2734175F00B0AE65 /* TEmuTests */,
 				ABF4B2182734175F00B0AE65 /* TEmuUITests */,
@@ -253,7 +250,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABF4B23127341BE800B0AE65 /* Sources in Resources */,
 				ABF4B2062734175E00B0AE65 /* Preview Assets.xcassets in Resources */,
 				ABF4B2032734175E00B0AE65 /* Assets.xcassets in Resources */,
 			);

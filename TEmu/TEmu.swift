@@ -251,7 +251,7 @@ struct TEmuView: View {
 //                            }
                             //tema.mmu.debugInit()
 //                            tema.tests()
-                            playPCM(filePath: "/Users/teo/Downloads/sine.pcm")
+                            playPCM(filePath: "/Users/teo/Downloads/all.wav")
                         }
                     Text("cpu rate: \(cycleRate)").monospacedDigit()
                     Text("fps: \(fps)").monospacedDigit()
