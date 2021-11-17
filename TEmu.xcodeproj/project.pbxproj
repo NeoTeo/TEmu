@@ -108,9 +108,9 @@
 				ABF4B2282734179500B0AE65 /* TEmu.swift */,
 				ABF4B22D2734183900B0AE65 /* MouseTracking.swift */,
 				ABF4B23227341D7D00B0AE65 /* ToneOutputUnit.swift */,
+				AB4E74FB273AAA0000C85BB6 /* AudioPlaybackUnit.swift */,
 				ABF4B2022734175E00B0AE65 /* Assets.xcassets */,
 				ABF4B2042734175E00B0AE65 /* Preview Content */,
-				AB4E74FB273AAA0000C85BB6 /* AudioPlaybackUnit.swift */,
 			);
 			path = TEmu;
 			sourceTree = "<group>";

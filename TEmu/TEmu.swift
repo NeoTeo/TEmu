@@ -24,6 +24,8 @@ fileprivate let tickAllocation = targetTEMAVirtualHz / targetPPUHz      // the n
 
 struct TEmuView: View {
     
+    let apu = AudioPlaybackUnit()
+    
     @State private var windowDims = CGSize(width: ppuWidth, height: ppuHeight)
     let cycleQ = DispatchQueue.global(qos: .userInitiated)
     let irQ = DispatchQueue.global(qos: .userInitiated)
@@ -32,6 +34,8 @@ struct TEmuView: View {
     @ObservedObject
     var ppu: PPU
 
+    @State var apuPlay: Bool = false
+    
     @State var fps: Int = 0
     @State var cycleRate: Int = 0
     
@@ -241,7 +245,7 @@ struct TEmuView: View {
                 }
                 
                 HStack {
-                    Text("TEMAv1")
+                    Text("TEMAv1 \(apuPlay ? "1" : "0")")
                         .onTapGesture {
                                                         
                             // test to see if writing to stdout actually displays. It does.
@@ -251,7 +255,12 @@ struct TEmuView: View {
 //                            }
                             //tema.mmu.debugInit()
 //                            tema.tests()
-                            playPCM(filePath: "/Users/teo/Downloads/all.wav")
+                            if apuPlay == false {
+                                apu.playPCM(filePath: "/Users/teo/Downloads/lol.wav")
+                            } else {
+                                apu.stop()
+                            }
+                            apuPlay.toggle()
                         }
                     Text("cpu rate: \(cycleRate)").monospacedDigit()
                     Text("fps: \(fps)").monospacedDigit()
