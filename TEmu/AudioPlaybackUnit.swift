@@ -14,14 +14,17 @@ class AudioPlaybackUnit : NSObject {
     let player = AVAudioPlayerNode()
     var converter: AVAudioConverter?
 
+    var adsr = AVAudioUnitEffect()
+    
     let wavHeaderBytes = 44
     
-    func wavPCM(from rawPCM: Data) {
+    func wavPCM(from rawPCM: Data) -> Data {
         // Wav header size is 44 (0x2C) bytes
-        let bitsPerSample: Int       = 0x08
-        let bitsPerChannel: Int      = 0x08
-        let channelsPerFrame: Int    = 0x02
-        let bytesPerFrame = bitsPerChannel * channelsPerFrame / 8
+        
+        let bitsPerChannel: Int     = 0x08
+        let channelsPerFrame: Int   = 0x02
+        let bitsPerSample: Int      = channelsPerFrame * bitsPerChannel
+        let bytesPerFrame           = bitsPerChannel * channelsPerFrame / 8
         
         var wav = Data(capacity: wavHeaderBytes)
         wav.insert(0x52, at: 0x00)    // R
@@ -98,64 +101,125 @@ class AudioPlaybackUnit : NSObject {
             print(String(format: "%02x ", wav[i]), terminator: "")
             if (i+1) % 8 == 0 { print("") }
         }
-
+        return wav
     }
 
     func stop() {
 //        player.volume = 0
         player.stop()
-        
     }
         
-    func playPCM(filePath: String) {
+    // Return the duration in seconds, given a data size in bytes
+    // Defaults to 2 channels, 8000.0 Hz sample rate
+    func duration(from sizeInBytes: Int, sampleRate: Double = 8000.0, channelCount: Int = 2) -> Double {
+        let frames = Double(sizeInBytes/channelCount)
+        // sample duration = frames / sampleRate
+        return frames / sampleRate
+    }
+
+    // Return the number of bytes required for a given duration in seconds
+    // Defaults to 2 channels, 8000.0 Hz sample rate
+    func byteSize(from duration: Double, sampleRate: Double = 8000.0, channelCount: Int = 2) -> Int {
+        // byte size = duration * sampleRate * channelCount
+        return Int(duration * sampleRate * Double(channelCount))
+    }
+    
+    // return given sample data repeated enough times to match the given duration
+    // assuming 2 channels, 8000.0 Hz sample rate
+    func loop(sourceBytes: Data, for targetDuration: Double) -> Data {
+        // Unimplemented
+        let sourceByteCount = sourceBytes.count
+        var bytesToCopy = byteSize(from: targetDuration)
+        var targetBytes = Data(capacity: bytesToCopy)
+        while bytesToCopy > 0 {
+            // test assumption that compiler is smart enough to not do this when the range == sourceBytes.count
+            let slice = sourceBytes.subdata(in: 0..<min(sourceByteCount,bytesToCopy))
+            targetBytes.append(slice)
+            bytesToCopy -= sourceByteCount
+        }
+        return targetBytes
+        
+        /*
+         compare performance of above with
+         sourceBytes.withUnsafeBytes { (bufferPointer) in
+             guard let addr = bufferPointer.baseAddress else { return }
+             targetData.copyMemory(from: addr, byteCount: sourceBytes.count)
+         }
+         */
+    }
+    
+    struct Envelope {
+        let attack: Double
+        let decay: Double
+        let sustain: Double
+        let release: Double
+    }
+    
+    func applyEnvelope(to sourceBytes: Data, envelope: Envelope) -> Data {
+        var newBytes = sourceBytes
+        for i in newBytes.indices {
+            let srcByte = sourceBytes[i]
+            // not sure why halving the values, turning 0x80 into 0x40, produces audible clicks at the beginning and end.
+            
+            newBytes[i] = UInt8(Double(srcByte) * 0.5)
+        }
+        return newBytes
+    }
+    
+    func debugPrint(bytes: Data) {
+        for i in bytes.indices {
+            print(String(format: "%02x ", bytes[i]), terminator: "")
+            if (i+1) % 8 == 0 { print("") }
+        }
+
+    }
+    
+    func playPCM(filePath: String, isRaw: Bool) {
         guard FileManager.default.fileExists(atPath: filePath) else { print("Failed to find \(filePath)") ; return }
         let fileUrl = URL(fileURLWithPath: filePath)
-//        testicle(fileUrl: fileUrl) ; return
+
         do {
             if try fileUrl.checkResourceIsReachable() == true { print("cool") }
-            ///*
-            let pcmdat = try Data(contentsOf: fileUrl)
-            //wavPCM(from: pcmdat) ; return
-    //        for i in pcmdat.indices {
-    //            print(String(format: "%02x ", pcmdat[i]), terminator: "")
-    //            if (i+1) % 8 == 0 { print("") }
-    //        }
-            // for all.wav
-//            guard let tFormat = AVAudioFormat(settings: [AVLinearPCMBitDepthKey : 16, AVLinearPCMIsFloatKey: false, AVFormatIDKey : kAudioFormatLinearPCM, AVSampleRateKey : 44100.0, AVNumberOfChannelsKey : 2]) else
-
-            guard let tFormat = AVAudioFormat(settings: [AVLinearPCMBitDepthKey : 8, AVLinearPCMIsFloatKey: false, AVFormatIDKey : kAudioFormatLinearPCM, AVSampleRateKey : 8000.0, AVNumberOfChannelsKey : 2]) else
-//            guard let tFormat = AVAudioFormat(commonFormat: AVAudioCommonFormat.otherFormat, sampleRate: 8000, channels: 2, interleaved: true) else
-            { print("format fail") ; return }
-            var asbd : AudioStreamBasicDescription = tFormat.streamDescription.pointee
-//            asbd.mFormatFlags = kLinearPCMFormatFlagIsPacked // kAudioFormatFlagIsPacked
-            asbd.mBytesPerPacket = 2
-            asbd.mBytesPerFrame = 2
-            asbd.mBitsPerChannel = 8
+            let tmpDat = try Data(contentsOf: fileUrl)
+            // frames = bytes of data / bytesPerFrame (assuming tmpDat is raw data)
+            let datBytes = isRaw ? tmpDat.count : tmpDat.count - 44
+            let dur = duration(from: datBytes)
+            print("sample duration is \(dur) seconds.")
+            print("sample size should be \(byteSize(from: dur)) bytes")
+            // generate sample of required length
+            let rawDat = isRaw ? tmpDat : tmpDat.subdata(in: 44 ..< tmpDat.count )
+            let extDat = loop(sourceBytes: rawDat, for: 9.0)
+            let newDat = applyEnvelope(to: extDat, envelope: Envelope(attack: 0, decay: 0, sustain: 0, release: 0))
+            print("newDat size is \(newDat.count)")
+            debugPrint(bytes: newDat)
+            let pcmdat = isRaw ? wavPCM(from: newDat) : newDat
+            // apply envelope
             
-            guard let inFormat = AVAudioFormat(streamDescription: &asbd) else { return }
-    //        print("inFormat bytes per frame: \(inFormat.streamDescription.pointee.mBytesPerFrame)")
+//            let pcmdat = isRaw ? wavPCM(from: tmpDat) : tmpDat
+            
+            
+            guard let inFormat = AVAudioFormat(settings: [AVLinearPCMBitDepthKey : 8, AVLinearPCMIsFloatKey: false, AVFormatIDKey : kAudioFormatLinearPCM, AVSampleRateKey : 8000.0, AVNumberOfChannelsKey : 2]) else { print("format fail") ; return }
             print("inFormat stream description: \(inFormat.streamDescription.pointee)")
-            print("inFormat stream format flags: \(inFormat.streamDescription.pointee.mFormatFlags)")
-    //        guard let inFormat = AVAudioFormat(commonFormat: AVAudioCommonFormat.pcmFormatInt16, sampleRate: 44100.0, channels: 2, interleaved: true) else { return }
-//            let frameCount = UInt32(pcmdat.count) / inFormat.streamDescription.pointee.mBytesPerFrame
+            
             let frameCount = UInt32(pcmdat.count - wavHeaderBytes) / inFormat.streamDescription.pointee.mBytesPerFrame // subtract header size when not raw pcm buffer
-            print("inFormat bytes per frame: \(inFormat.streamDescription.pointee.mBytesPerFrame)")
+            
             print("frameCount is \(frameCount)")
             
             // Use system format as output format
-//            let outFormat = engine.mainMixerNode.outputFormat(forBus: 0)
+//            let outFormat2 = engine.mainMixerNode.outputFormat(forBus: 0)
             let outFormat = AVAudioFormat(commonFormat: AVAudioCommonFormat.pcmFormatFloat32, sampleRate: 44100.0, channels: 2, interleaved: false)!
             print("outFormat stream description: \(outFormat.streamDescription.pointee)")
             converter = AVAudioConverter(from: inFormat, to: outFormat)!
             let mixer = engine.mainMixerNode
             engine.attach(player)
             engine.connect(player, to: mixer, format: nil)
+            
             engine.prepare()
             try engine.start()
             
             // Prepare input and output buffer
             print("outFrame bytes per frame: \(outFormat.formatDescription.audioStreamBasicDescription!.mBytesPerFrame)")
-//            let outFrameCap = frameCount*outFormat.formatDescription.audioStreamBasicDescription!.mBytesPerFrame
+
             let ratio =  outFormat.sampleRate / inFormat.sampleRate
             let outFrameCap = UInt32(Double(frameCount) * ratio)
             print("outFrameCap is \(outFrameCap)")
@@ -173,24 +237,6 @@ class AudioPlaybackUnit : NSObject {
                 guard let addr = bufferPointer.baseAddress else { return }
                 auBuf.mData?.copyMemory(from: addr+wavHeaderBytes, byteCount: Int(auBuf.mDataByteSize))
             }
-            /*
-            // what are Taps and will they be useful for envelope stuff? https://stackoverflow.com/questions/48831411/converting-avaudiopcmbuffer-to-another-avaudiopcmbuffer
-            
-            //let frameCount = UInt32(audioFile.length)
-            guard let buf = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: AVAudioFrameCount(frameCount)) else { print("playPCM failed to  create buffer") ; return }
-            buf.frameLength = buf.frameCapacity
-            let auBuf = buf.audioBufferList.pointee.mBuffers
-            pcmdat.withUnsafeBytes { (bufferPointer) in
-                guard let addr = bufferPointer.baseAddress else { return }
-                auBuf.mData?.copyMemory(from: addr, byteCount: Int(auBuf.mDataByteSize))
-            }
-             */
-            // */
-//            let tdat = Data(bytes: auBuf.mData!, count: Int(auBuf.mDataByteSize))
-//            for i in tdat.indices {
-//                print(String(format: "%02x ", tdat[i]), terminator: "")
-//                if (i+1) % 8 == 0 { print("") }
-//            }
 
             let status  = converter?.convert(to: outputBuffer, error: nil) { inNumPackets, outStatus in
                 outStatus.pointee = .haveData
@@ -200,7 +246,6 @@ class AudioPlaybackUnit : NSObject {
             
 //            player.scheduleBuffer(outputBuffer) {  ()->Void in
             player.scheduleBuffer(outputBuffer, completionCallbackType: .dataPlayedBack) {_ in
-                
                 print("scheduleBuffer callback")
             }
             self.player.play()
@@ -208,19 +253,4 @@ class AudioPlaybackUnit : NSObject {
             print("playPCM error \(error)")
         }
     }
-    func testicle(fileUrl: URL) {
-        
-        do {
-        let audioFile = try AVAudioFile(forReading: fileUrl)
-        let format = audioFile.processingFormat
-        let frameCount = UInt32(audioFile.length)
-        print("frameCount is \(frameCount)")
-        print("format: \(format.formatDescription)")
-        guard let buf = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: frameCount) else { print("playPCM failed to  create buffer") ; return }
-        try audioFile.read(into: buf)
-        } catch {
-            print("testicle error! \(error)")
-        }
-    }
-
 }

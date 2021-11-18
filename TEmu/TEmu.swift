@@ -256,7 +256,8 @@ struct TEmuView: View {
                             //tema.mmu.debugInit()
 //                            tema.tests()
                             if apuPlay == false {
-                                apu.playPCM(filePath: "/Users/teo/Downloads/lol.wav")
+//                                apu.playPCM(filePath: "/Users/teo/Downloads/sine.wav", isRaw: true)
+                                apu.playPCM(filePath: "/Users/teo/Downloads/lol.wav", isRaw: false)
                             } else {
                                 apu.stop()
                             }
